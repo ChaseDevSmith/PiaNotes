@@ -4,7 +4,8 @@ class CreateParents < ActiveRecord::Migration[6.0]
       t.string :name
       # t.image :image
       
-     
+      t.string :password_digest
+
       t.string :number
       t.string :email
       t.timestamps

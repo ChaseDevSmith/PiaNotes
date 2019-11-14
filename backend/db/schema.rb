@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_165418) do
 
   create_table "parents", force: :cascade do |t|
     t.string "name"
+    t.string "password_digest"
     t.string "number"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
@@ -31,7 +32,8 @@ ActiveRecord::Schema.define(version: 2019_11_05_165418) do
 
   create_table "practices", force: :cascade do |t|
     t.datetime "time"
-    t.integer "description"
+    t.text "description"
+    t.integer "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_165418) do
     t.string "number"
     t.string "email"
     t.integer "parent_id"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_165418) do
     t.integer "age"
     t.string "number"
     t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

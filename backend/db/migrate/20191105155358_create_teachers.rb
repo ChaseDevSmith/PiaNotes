@@ -9,6 +9,7 @@ class CreateTeachers < ActiveRecord::Migration[6.0]
       t.string :email
       
 
+      t.string :password_digest
 
       t.timestamps
     end

@@ -9,7 +9,9 @@ class TeachersController < ApplicationController
 
     end 
     def create
-        Teacher.create(name:params[:name], profession:params[:profession], age:params[:age], number:params[:number], email:params[:email])
+        teacher = Teacher.create(name:params[:name], profession:params[:profession], age:params[:age], number:params[:number], email:params[:email], password:params[:password])
+        token = JWT.encode({ id: user.id, type: type }, 'asdljasldkfjs', 'HS256')
+        render json: { success: true, id: user.id, token: token}
     end 
     def show
         
@@ -20,14 +22,17 @@ class TeachersController < ApplicationController
     
     end
     def update
-
+        @teacher = Teacher.find(params[:id])
+        @teacher.update(name:params[:name],profession:params[:profession],age:params[:age],number:params[:number],email:params[:email])
     end 
     def destroy
+        @teacher = Teacher.find(params[:id])
+        @teacher.destroy
+
 
     end 
-    def all_my_students
-        puts 'hi nom'
-        byebug
+    def all_my_students 
+        render json: current_user.students
     end
 
 end

@@ -8,6 +8,9 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.string :number
       t.string :email
       t.integer :parent_id
+
+      t.string :password_digest
+
       t.timestamps
     end
   end

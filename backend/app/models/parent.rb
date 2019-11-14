@@ -1,6 +1,9 @@
 class Parent < ApplicationRecord
+    has_secure_password
+
     has_many :students 
-    validates :name, presence: true
+    validates :name, :number, :email,  :presence=> true
+
     
 
     # has_many :joiner

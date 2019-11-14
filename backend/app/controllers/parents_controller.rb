@@ -9,8 +9,9 @@ class ParentsController < ApplicationController
 
     end 
     def create
-        Parent.create(name:params[:name], number:params[:number], email:params[:email])
-
+       parent =  Parent.create(name:params[:name], number:params[:number], email:params[:email],password:params[:password])
+       token = JWT.encode({ id: user.id, type: type }, 'asdljasldkfjs', 'HS256')
+       render json: { success: true, id: user.id, token: token}
     end 
     def show
         
@@ -21,10 +22,12 @@ class ParentsController < ApplicationController
     
     end
     def update
-
+        @parent = Parent.find_by(id:params[:id])
+        @parent.update(name:params[:name],number:params[:number],email:[:email])
     end 
     def destroy
-
+        @parent = Parent.find_by(id:params[:id])
+        @parent.destroy 
     end 
 
 end
