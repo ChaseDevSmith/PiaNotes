@@ -25,7 +25,7 @@ export class myAppointments extends Component {
 
     render() {
         return (
-            <div style={{ color: "white", backgroundColor: "coral", height: 2500 }}>
+            <div style={{ color: "white", backgroundColor: "coral", height: 3000 }}>
                 <form onSubmit={(e) => this.newAccount(e)} >
                     <center>
                         <h1> all my appointments </h1>

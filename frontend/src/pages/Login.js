@@ -61,12 +61,12 @@ export default class Login extends React.Component {
         return (
 
 
-            <div  class ="login-page" style={{ color: "white", backgroundColor: "coral", height: 700 }}>
+            <div  class ="login-page" style={{ color: "white", backgroundColor: "coral", height: 1100 }}>
                 <form  class = "form" onSubmit={(e) => this.signin(e)}
                 >
                     <center>
 
-                        <h1>Login</h1>
+                        <h1> PiaNotes Login </h1>
 
 
                         Name<br></br><input type="text" id="name"></input>
